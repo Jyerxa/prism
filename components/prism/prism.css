@@ -222,7 +222,7 @@
 }
 .prism-switch [data-slot='switch-thumb'][data-checked] {
   background: #293b19;
-  transform: translateX(18px);
+  translate: 18px;
 }
 .prism-checkbox-row {
   display: flex;
