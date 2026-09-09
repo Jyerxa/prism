@@ -308,7 +308,7 @@ function Sample({ id }: { id: string }) {
     return (
       <div className="badge-samples">
         <div>
-          <GlassBadge tone="lime">
+          <GlassBadge tone="verdigris">
             <span className="status-dot" />
             Available now
           </GlassBadge>
@@ -317,7 +317,7 @@ function Sample({ id }: { id: string }) {
         <div>
           <GlassBadge>Ambient</GlassBadge>
           <GlassBadge>Vol. 01</GlassBadge>
-          <GlassBadge tone="lime">New release</GlassBadge>
+          <GlassBadge tone="verdigris">New release</GlassBadge>
         </div>
         <p>A little context goes a long way.</p>
       </div>

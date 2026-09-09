@@ -41,7 +41,7 @@ export default function Foundations() {
     <SiteShell active="foundations">
       <main id="main" className="foundations-main">
         <section className="foundation-intro">
-          <GlassBadge tone="lime">The thinking beneath the surface</GlassBadge>
+          <GlassBadge tone="verdigris">The thinking beneath the surface</GlassBadge>
           <h1>
             Clarity is
             <br />
@@ -96,7 +96,7 @@ export default function Foundations() {
               ['Ink', '#0B1018', 'Canvas'],
               ['Mist', '#A5B1C2', 'Secondary text'],
               ['Frost', '#F2F5FA', 'Primary text'],
-              ['Lime', '#D3F99A', 'Primary action'],
+              ['Verdigris', '#74D1C4', 'Primary action'],
               ['Sky', '#AAD8FF', 'Information'],
             ].map(([name, color, usage]) => (
               <div className="color-swatch" key={name}>

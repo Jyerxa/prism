@@ -220,8 +220,8 @@
   position: relative;
 }
 .scene-card.prism-button[aria-pressed='true'] {
-  border-color: #c0df8f60;
-  background: #c0df8f06;
+  border-color: #72cbbf60;
+  background: #72cbbf06;
   color: #f2f5fa;
 }
 .scene-art {
@@ -272,7 +272,7 @@
   color: #8a9dad;
 }
 .scene-card[aria-pressed='true'] .scene-choice {
-  color: #d3f99a;
+  color: #74d1c4;
 }
 .room-player.prism-card {
   display: grid;
@@ -300,7 +300,7 @@
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: #a5be8c;
+  color: #86b9b1;
 }
 .player-track h2 {
   font-size: 0.875rem;
@@ -473,7 +473,7 @@
   gap: 38px 70px;
 }
 .principle > svg {
-  color: #c7dfae;
+  color: #a8ddd4;
   margin-bottom: 16px;
 }
 .principle h3 {

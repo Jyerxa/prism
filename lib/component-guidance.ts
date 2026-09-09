@@ -14,7 +14,7 @@ export const componentGuides: ComponentGuide[] = [
     category: 'Actions',
     summary: 'A tactile invitation to take the next step.',
     rules: [
-      'Use a single lime primary action in each section.',
+      'Use a single verdigris primary action in each section.',
       'Start labels with a verb. Give icon-only buttons an aria-label.',
       'Keep a minimum 44px touch target and preserve visible keyboard focus.',
     ],
@@ -80,11 +80,11 @@ export const componentGuides: ComponentGuide[] = [
     summary: 'A small signal that says just enough.',
     rules: [
       'Pair color with a clear text label.',
-      'Use lime for a positive or current state; blue for information.',
+      'Use verdigris for a positive or current state; blue for information.',
       'Keep badges short and secondary to the content title.',
     ],
     avoid: 'Making a badge behave like an unlabeled action button.',
-    code: '<GlassBadge tone="lime">Available</GlassBadge>\n<GlassBadge tone="blue">Spatial audio</GlassBadge>',
+    code: '<GlassBadge tone="verdigris">Available</GlassBadge>\n<GlassBadge tone="blue">Spatial audio</GlassBadge>',
   },
   {
     id: 'input',
