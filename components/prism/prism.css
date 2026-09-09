@@ -7,8 +7,8 @@
   --card-foreground: #f2f5fa;
   --popover: #192333;
   --popover-foreground: #f2f5fa;
-  --primary: #d3f99a;
-  --primary-foreground: #1b2c10;
+  --primary: #74d1c4;
+  --primary-foreground: #082521;
   --secondary: #293443;
   --secondary-foreground: #f2f5fa;
   --muted: #253040;
@@ -18,7 +18,7 @@
   --destructive: #ffa7ae;
   --border: #ffffff20;
   --input: #ffffff26;
-  --ring: #d3f99a;
+  --ring: #74d1c4;
   --radius: 1rem;
   --glass-clear: rgb(190 213 247 / 5%);
   --glass-frosted: rgb(33 46 65 / 62%);
@@ -30,12 +30,12 @@
   --motion-duration: 180ms;
   --sidebar: #101722;
   --sidebar-foreground: #f2f5fa;
-  --sidebar-primary: #d3f99a;
-  --sidebar-primary-foreground: #1b2c10;
+  --sidebar-primary: #74d1c4;
+  --sidebar-primary-foreground: #082521;
   --sidebar-accent: #253040;
   --sidebar-accent-foreground: #fff;
   --sidebar-border: #ffffff20;
-  --sidebar-ring: #d3f99a;
+  --sidebar-ring: #74d1c4;
 }
 .prism-button {
   min-height: 44px;
@@ -65,15 +65,15 @@
   border-color: #ecf5ff40;
 }
 .prism-button--primary {
-  color: #1b2c10;
-  background: #d3f99a;
-  border-color: #e3ffc2;
+  color: #082521;
+  background: #74d1c4;
+  border-color: #b1f3eb;
   box-shadow:
-    0 0 22px #c9f39a0d,
+    0 0 22px #62c8bb0d,
     inset 0 1px 0 #ffffff80;
 }
 .prism-button--primary:hover {
-  background: #e0ffb4;
+  background: #91e3d8;
 }
 .prism-button--quiet {
   color: #b9c5d6;
@@ -97,11 +97,11 @@
 }
 .prism-button[data-pressed],
 .prism-button[aria-pressed='true'] {
-  border-color: #d3f99a88;
-  color: #d3f99a;
+  border-color: #74d1c488;
+  color: #74d1c4;
 }
 .prism-button--primary[aria-pressed='true'] {
-  color: #1b2c10;
+  color: #082521;
 }
 .icon-button {
   width: 44px;
@@ -139,10 +139,10 @@
   color: #c5d1e1;
   background: #c0d5f00b;
 }
-.prism-badge--lime {
-  color: #d3f99a;
-  background: #b7de7720;
-  border-color: #b7de772b;
+.prism-badge--verdigris {
+  color: #74d1c4;
+  background: #49b9aa20;
+  border-color: #49b9aa2b;
 }
 .prism-badge--blue {
   color: #aad8ff;
@@ -212,7 +212,7 @@
   cursor: pointer;
 }
 .prism-switch[data-checked] {
-  background: #d3f99a;
+  background: #74d1c4;
 }
 .prism-switch [data-slot='switch-thumb'] {
   width: 18px;
@@ -221,7 +221,7 @@
   box-shadow: 0 1px 3px #0004;
 }
 .prism-switch [data-slot='switch-thumb'][data-checked] {
-  background: #293b19;
+  background: #0c342f;
   translate: 18px;
 }
 .prism-checkbox-row {
@@ -238,7 +238,7 @@
   background: #08111e66;
 }
 .prism-checkbox[data-checked] {
-  background: #d3f99a;
+  background: #74d1c4;
 }
 .prism-slider-field {
   width: 100%;
@@ -264,9 +264,9 @@
 .prism-slider [data-slot='slider-thumb'] {
   width: 14px;
   height: 14px;
-  border: 3px solid #edfbcf;
-  background: #c7e797;
-  box-shadow: 0 0 0 4px #c6ed9414;
+  border: 3px solid #d2fdf7;
+  background: #8dded3;
+  box-shadow: 0 0 0 4px #70d4c614;
 }
 .prism-tab-list {
   height: auto !important;
@@ -355,7 +355,7 @@
   backdrop-filter: blur(8px);
 }
 :where(button, a, input, select, [tabindex]):focus-visible {
-  outline: 2px solid #d3f99a;
+  outline: 2px solid #74d1c4;
   outline-offset: 4px;
 }
 @supports not (backdrop-filter: blur(1px)) {

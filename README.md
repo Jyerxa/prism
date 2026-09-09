@@ -70,7 +70,7 @@ The vendored shadcn Slider has one small functional extension: `thumbProps`, so 
 | Frosted  | 62% ink-blue fill | 24px | Compact cards and grouped controls                          |
 | Solid    | Opaque ink-blue   | None | Dense reading and strict contrast environments              |
 
-- Use one primary lime action per section.
+- Use one primary verdigris action per section.
 - Put a dark scrim behind image-backed text. Verify contrast against the final composited background, not the alpha color token alone.
 - Do not nest blurred containers. Prefer borders and highlights for additional grouping.
 - Give every input a visible label, every icon button an accessible name, and every error an actionable message.

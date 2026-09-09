@@ -44,7 +44,7 @@ a {
   letter-spacing: -0.055em;
 }
 .brand-period {
-  color: #d3f99a;
+  color: #74d1c4;
 }
 .prism-mark {
   display: inline-block;
@@ -101,7 +101,7 @@ a {
   content: '';
   position: absolute;
   height: 2px;
-  background: #d3f99a;
+  background: #74d1c4;
   bottom: -1px;
   left: 0;
   right: 0;
@@ -136,8 +136,8 @@ a {
   left: 20px;
   z-index: 100;
   padding: 12px;
-  background: #d3f99a;
-  color: #15210a;
+  background: #74d1c4;
+  color: #082521;
 }
 .skip-link:focus {
   top: 10px;
@@ -176,8 +176,8 @@ main {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #d3f99a;
-  box-shadow: 0 0 9px #d3f99a44;
+  background: #74d1c4;
+  box-shadow: 0 0 9px #74d1c444;
   flex-shrink: 0;
 }
 .explorer-intro h1 {
@@ -194,7 +194,7 @@ main {
 .heading-star {
   display: inline-block;
   font-size: 5.2rem;
-  color: #d3f99a;
+  color: #74d1c4;
   font-weight: 300;
   margin-left: 30px;
   vertical-align: 9px;
@@ -232,7 +232,7 @@ main {
   transition: color 0.2s;
 }
 .text-link:hover {
-  color: #d3f99a;
+  color: #74d1c4;
 }
 .intro-aside .text-link {
   margin-top: 13px;
@@ -438,7 +438,7 @@ main {
   margin-bottom: 14px;
 }
 .sample-heading svg {
-  color: #bddb99;
+  color: #9fdad0;
 }
 .tab-sample-content {
   text-align: center;
@@ -609,7 +609,7 @@ main {
 }
 .usage-rules p svg {
   flex-shrink: 0;
-  color: #d3f99a;
+  color: #74d1c4;
   margin-top: 4px;
 }
 .avoid-note {
@@ -655,7 +655,7 @@ pre {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.75rem;
   line-height: 1.8;
-  color: #c9e7b2;
+  color: #a9e1d8;
 }
 @media (min-width: 1500px) {
   .explorer-intro {

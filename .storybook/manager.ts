@@ -4,12 +4,12 @@ addons.setConfig({
   theme: create({
     base: 'dark',
     brandTitle: 'Prism · Component workshop',
-    colorPrimary: '#d3f99a',
-    colorSecondary: '#d3f99a',
+    colorPrimary: '#74d1c4',
+    colorSecondary: '#74d1c4',
     appBg: '#0b1018',
     appContentBg: '#101a28',
     textColor: '#e7eff8',
     barBg: '#152131',
-    barSelectedColor: '#d3f99a',
+    barSelectedColor: '#74d1c4',
   }),
 });

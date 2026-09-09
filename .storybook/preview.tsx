@@ -7,8 +7,8 @@ const preview: Preview = {
     docs: {
       theme: create({
         base: 'dark',
-        colorPrimary: '#d3f99a',
-        colorSecondary: '#d3f99a',
+        colorPrimary: '#74d1c4',
+        colorSecondary: '#74d1c4',
         appBg: '#0b1018',
         appContentBg: '#101a28',
         textColor: '#e7eff8',

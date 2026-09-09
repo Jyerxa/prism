@@ -7,7 +7,7 @@ export function GlassBadge({
   tone = 'neutral',
   className,
   ...props
-}: ComponentProps<typeof Badge> & { tone?: 'neutral' | 'lime' | 'blue' }) {
+}: ComponentProps<typeof Badge> & { tone?: 'neutral' | 'verdigris' | 'blue' }) {
   return (
     <Badge
       {...props}
