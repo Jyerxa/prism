@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -11,7 +11,7 @@
 # testing
 /coverage
 
-# next.js
+# legacy generated output
 /.next/
 /.vinext/
 /out/
@@ -28,11 +28,12 @@ yarn-error.log*
 
 # local environment
 .env*
+!.env.example
 
 # deployment and generated files
 .vercel
 next-env.d.ts
-/dist/
+dist/
 /.wrangler/
 /outputs/
 /work/
@@ -41,5 +42,6 @@ next-env.d.ts
 *.tsbuildinfo
 /playwright-report/
 /test-results/
+storybook-static/
 
 .prism-build.log

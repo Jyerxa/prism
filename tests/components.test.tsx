@@ -10,8 +10,8 @@ import {
   GlassTabs,
   GlassSelect,
   GlassDialog,
-} from '@/components/prism';
-import { componentGuides } from '@/lib/component-guidance';
+} from '@prism/ui';
+import { componentGuides } from '@prism/ui/guidance';
 
 describe('Prism component contracts', () => {
   it('activates a named button by keyboard and respects disabled', async () => {
