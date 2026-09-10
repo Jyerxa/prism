@@ -27,6 +27,8 @@ During development, demo links open Storybook at `http://localhost:6006`. Start 
 
 Publish `apps/demo/dist` and `apps/storybook/dist` as separate static sites. The demo uses React Router with browser history; configure its static host to serve `index.html` for navigation requests to `/foundations`, `/listening-room`, and other client routes. Vite development and preview servers already provide this fallback. Storybook uses its own index and iframe assets and needs no demo fallback.
 
+For the demo's Vercel project, keep the Root Directory at the repository root (`.`). The root `vercel.json` selects Vite, runs `npm run build`, publishes `apps/demo/dist`, and supplies the SPA fallback. This overrides Vercel's default `dist` output path, which is relative to the repository root rather than the demo workspace. Deploy Storybook as its own project with Root Directory `apps/storybook`, build command `npm run build`, and output directory `dist`; allow access to files outside that root so it can import `packages/ui`.
+
 The existing `.openai/hosting.json` points Sites at the demo's static output. Neither app needs vinext, Next.js, React Server Components, Wrangler, or a Cloudflare development runtime.
 
 ## What is included
