@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, useNavigate } from 'react-router';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import appHtml from '../index.html?raw';
 import { App } from './app';
 
 function HistoryBack() {
@@ -24,6 +25,31 @@ beforeEach(() => {
 });
 
 describe('demo navigation', () => {
+  it('keeps one document title when mounted in the real HTML shell', async () => {
+    const user = userEvent.setup();
+    const shell = new DOMParser().parseFromString(appHtml, 'text/html');
+    const headElements = Array.from(shell.head.children);
+    document.head.append(...headElements);
+
+    try {
+      renderRoute('/');
+      expect(document.head.querySelectorAll('title')).toHaveLength(1);
+      expect(document.body.querySelector('title')).toBeNull();
+      expect(document.title).toBe('Prism — Glass, with substance.');
+
+      await user.click(
+        within(
+          screen.getByRole('navigation', { name: 'Main navigation' }),
+        ).getByRole('link', { name: 'Foundations' }),
+      );
+      expect(document.head.querySelectorAll('title')).toHaveLength(1);
+      expect(document.body.querySelector('title')).toBeNull();
+      expect(document.title).toBe('Foundations · Prism');
+    } finally {
+      headElements.forEach((element) => element.remove());
+    }
+  });
+
   it.each([
     ['/', 'Prism — Glass, with substance.', 'Components'],
     ['/foundations', 'Foundations · Prism', 'Foundations'],
