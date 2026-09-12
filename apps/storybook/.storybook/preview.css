@@ -1,0 +1,4 @@
+@import '@prism/ui/styles.css';
+
+@source '../stories';
+@source './preview.tsx';
