@@ -103,6 +103,37 @@ describe('demo navigation', () => {
     expect(url.searchParams.get('path')).toBe('/docs/prism-button--docs');
   });
 
+  it('discovers new components through category filters and their usage documentation', async () => {
+    const user = userEvent.setup();
+    renderRoute('/');
+    expect(
+      screen.getByText('14 thoughtfully made components.'),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Inputs' }));
+    expect(
+      screen.getByRole('textbox', { name: 'Collection notes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('radiogroup', { name: 'Listening intention' }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Accordion' })).toBeNull();
+    await user.click(screen.getByRole('button', { name: 'Surfaces' }));
+    expect(
+      screen.queryByRole('textbox', { name: 'Collection notes' }),
+    ).toBeNull();
+    expect(
+      screen.getByRole('button', { name: 'Can I listen offline?' }),
+    ).toHaveAttribute('aria-expanded', 'true');
+    await user.click(
+      screen.getByRole('button', { name: 'View Accordion usage rules' }),
+    );
+    const link = screen.getByRole('link', {
+      name: 'Explore states in Storybook',
+    });
+    expect(new URL(link.getAttribute('href')!).searchParams.get('path')).toBe(
+      '/docs/prism-accordion--docs',
+    );
+  });
   it('shows a recoverable not-found page', async () => {
     const user = userEvent.setup();
     renderRoute('/missing');

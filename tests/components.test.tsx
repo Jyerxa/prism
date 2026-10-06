@@ -155,12 +155,12 @@ describe('Prism component contracts', () => {
     await waitFor(() => expect(trigger).toHaveFocus());
   });
   it('ships actionable guidance and an example for every public component', () => {
-    expect(componentGuides).toHaveLength(11);
+    expect(componentGuides).toHaveLength(14);
     for (const guide of componentGuides) {
       expect(guide.rules.length).toBeGreaterThanOrEqual(3);
       expect(guide.avoid.length).toBeGreaterThan(20);
       expect(guide.code).toContain('<Glass');
     }
-    expect(new Set(componentGuides.map((g) => g.id)).size).toBe(11);
+    expect(new Set(componentGuides.map((g) => g.id)).size).toBe(14);
   });
 });

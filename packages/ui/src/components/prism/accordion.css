@@ -1,0 +1,71 @@
+.prism-accordion {
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  background: var(--glass-frosted);
+  color: var(--foreground);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur)) saturate(130%);
+}
+.prism-accordion-item {
+  padding: 0 18px;
+  border-color: var(--glass-border);
+}
+.prism-accordion-trigger {
+  min-height: 48px;
+  padding: 14px 0;
+  gap: 14px;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.prism-accordion-trigger:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+.prism-accordion-trigger:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.prism-accordion-trigger[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.prism-accordion-content {
+  padding-bottom: 16px;
+  color: var(--muted-foreground);
+  line-height: 1.65;
+}
+@media (prefers-reduced-motion: reduce) {
+  .prism-accordion [data-slot='accordion-content'],
+  .prism-accordion-trigger {
+    animation: none;
+    transition: none;
+  }
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .prism-accordion {
+    background: var(--glass-solid);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .prism-accordion {
+    background: var(--glass-solid);
+    backdrop-filter: none;
+  }
+}
+@media (forced-colors: active) {
+  .prism-accordion {
+    border-color: CanvasText;
+    background: Canvas;
+    color: CanvasText;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .prism-accordion-trigger,
+  .prism-accordion-content {
+    color: CanvasText;
+  }
+  .prism-accordion-trigger:focus-visible {
+    outline-color: Highlight;
+  }
+}

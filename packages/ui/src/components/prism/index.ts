@@ -9,3 +9,6 @@ export * from './tabs';
 export * from './select';
 export * from './dialog';
 export * from './tooltip';
+export * from './textarea';
+export * from './radio-group';
+export * from './accordion';
