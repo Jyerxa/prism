@@ -33,9 +33,9 @@ The existing `.openai/hosting.json` points Sites at the demo's static output. Ne
 
 ## What is included
 
-- **11 exported components:** GlassButton, GlassCard, GlassBadge, GlassInput, GlassSwitch, GlassCheckbox, GlassSlider, GlassTabs, GlassSelect, GlassDialog, GlassTooltip.
+- **14 exported components:** GlassButton, GlassCard, GlassBadge, GlassInput, GlassSwitch, GlassCheckbox, GlassSlider, GlassTabs, GlassSelect, GlassDialog, GlassTooltip, GlassTextarea, GlassRadioGroup, GlassAccordion.
 - Component-specific usage rules, avoid guidance, and copyable examples in the explorer and Storybook.
-- Storybook controls, 38 example states, accessibility addon, and interaction play functions.
+- Storybook controls, 51 example states, accessibility addon, and interaction play functions.
 - Three materials: clear, frosted, and solid. Shared design tokens, accessible focus states, reduced motion, reduced transparency, forced colors, and no-blur fallbacks.
 - Desktop compositions that reorganize for tablet and phone. Minimum 44px primary control targets and 16px text entry.
 - Original generated landscape artwork and three original procedural soundscapes. Audio begins only on an explicit play action. Volume, atmosphere, stereo width, scene changes, pause, and sleep timer work. Favorites and created preview collections last for the current visit; there is no account or backend storage.
@@ -67,7 +67,7 @@ export function CollectionForm() {
 
 `@prism/ui` is a private source package, not a published npm package. Both apps consume its public exports directly, so changes appear through Vite without building the library first.
 
-- `@prism/ui`: the 11 Glass components and their types.
+- `@prism/ui`: the 14 Glass components and their types.
 - `@prism/ui/styles.css`: Tailwind setup, shared tokens, component styles, and bundled Geist fonts.
 - `@prism/ui/guidance`: usage rules and code examples.
 
@@ -96,7 +96,8 @@ The vendored shadcn Slider has one small functional extension: `thumbProps`, so 
 - Put a dark scrim behind image-backed text. Verify contrast against the final composited background, not the alpha color token alone.
 - Do not nest blurred containers. Prefer borders and highlights for additional grouping.
 - Give every input a visible label, every icon button an accessible name, and every error an actionable message.
-- Use switches for immediate settings and checkboxes for choices submitted later.
+- Use switches for immediate settings, checkboxes for independent choices submitted later, and radio groups for one visible choice.
+- Use textareas for multi-line responses and accordions for supporting details with essential instructions kept visible.
 - Use links for page navigation and tabs for related panels.
 - Tooltip text is supplementary; required instructions must remain visible on mobile.
 - Tokens live in `packages/ui/src/components/prism/prism.css`. Website layouts use a 4px spacing rhythm and fluid breakpoints at 600, 850, and 1100px.
@@ -117,7 +118,7 @@ The vendored shadcn Slider has one small functional extension: `thumbProps`, so 
 
 ## Verification and limits
 
-`npm run test` checks keyboard activation, labels, errors, switch/checkbox behavior, controlled sliders, tabs, select labeling, dialog dismissal/return focus, documentation coverage, direct route rendering, history navigation, and external Storybook links. Storybook has reusable interaction scenarios and an accessibility addon for further review. Static type checks and production builds are part of the delivery checks. Lint covers the authored application, Prism components, stories, tests, and the extended Slider; untouched starter catalog files retain upstream lint findings.
+`npm run test` checks keyboard activation, labels, errors, switch/checkbox behavior, controlled sliders, tabs, select labeling, dialog dismissal/return focus, textarea validation, radio selection, accordion expansion, documentation coverage, direct route rendering, history navigation, and external Storybook links. Storybook has reusable interaction scenarios and an accessibility addon for further review. Static type checks and production builds are part of the delivery checks. Lint covers the authored application, Prism components, stories, tests, and the extended Slider; untouched starter catalog files retain upstream lint findings.
 
 Automated component tests do not replace manual browser, screen-reader, audio, or visual review. No browser-based visual QA or WCAG conformance audit is claimed. Glass contrast depends on the background used in your own product. The listening room is an original functional demo, not a streaming service.
 

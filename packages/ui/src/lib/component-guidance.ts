@@ -101,6 +101,34 @@ export const componentGuides: ComponentGuide[] = [
     code: '<GlassInput label="Collection name"\n  placeholder="Sunday, slowly"\n  hint="Give your collection a memorable name." />',
   },
   {
+    id: 'textarea',
+    name: 'Textarea',
+    category: 'Inputs',
+    summary: 'A little more room for a thought.',
+    rules: [
+      'Use for multi-line responses and keep a visible label.',
+      'Give enough rows for the expected answer and allow resizing.',
+      'Use hint for context and error for a specific way to recover.',
+    ],
+    avoid:
+      'Long-form entry squeezed into a single-line input or placeholder-only labels.',
+    code: '<GlassTextarea label="Collection notes" rows={4}\n  placeholder="What makes this moment yours?"\n  hint="A few words to return to later." />',
+  },
+  {
+    id: 'radio-group',
+    name: 'Radio group',
+    category: 'Inputs',
+    summary: 'One choice, with every possibility in view.',
+    rules: [
+      'Use for one selection from a short list of visible choices.',
+      'Give the group a label and each option a distinct, stable value.',
+      'Keep arrow-key navigation and explain unavailable options nearby.',
+    ],
+    avoid:
+      'Independent preferences that could all be selected; use checkboxes for those.',
+    code: '<GlassRadioGroup label="Listening intention" defaultValue="focus"\n  options={[{ value: "focus", label: "Focus" },\n    { value: "unwind", label: "Unwind" }]} />',
+  },
+  {
     id: 'select',
     name: 'Select',
     category: 'Inputs',
@@ -139,6 +167,20 @@ export const componentGuides: ComponentGuide[] = [
     avoid:
       'Stacked dialogs or essential content that only appears in a tooltip.',
     code: '<GlassDialog title="New collection"\n  description="Make a little space for your favorites."\n  trigger={<GlassButton>Create collection</GlassButton>}>\n  <GlassInput label="Name" />\n</GlassDialog>',
+  },
+  {
+    id: 'accordion',
+    name: 'Accordion',
+    category: 'Surfaces',
+    summary: 'A little detail, opened at your own pace.',
+    rules: [
+      'Use for related supporting details with clear section labels.',
+      'Keep essential instructions visible outside collapsed panels.',
+      'Use multiple when readers need to compare several open sections.',
+    ],
+    avoid:
+      'Hiding the main task, required errors, or unrelated navigation inside panels.',
+    code: '<GlassAccordion label="Listening questions" items={[\n  { value: "offline", label: "Can I listen offline?",\n    content: "Download a collection first." },\n]} />',
   },
   {
     id: 'tooltip',

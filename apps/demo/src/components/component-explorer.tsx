@@ -28,6 +28,9 @@ import {
   GlassCheckbox,
   GlassDialog,
   GlassTooltip,
+  GlassTextarea,
+  GlassRadioGroup,
+  GlassAccordion,
 } from '@prism/ui';
 import { guideFor, componentGuides } from '@prism/ui/guidance';
 import { SiteShell } from './site-shell';
@@ -331,6 +334,39 @@ function Sample({ id }: { id: string }) {
         hint="Something that feels like you."
       />
     );
+  if (id === 'textarea')
+    return (
+      <GlassTextarea
+        label="Collection notes"
+        rows={4}
+        placeholder="What makes this moment yours?"
+        hint="A few words to return to later."
+      />
+    );
+  if (id === 'radio-group')
+    return (
+      <GlassRadioGroup
+        label="Listening intention"
+        defaultValue="focus"
+        options={[
+          {
+            value: 'focus',
+            label: 'Focus',
+            description: 'Room for a deeper thought',
+          },
+          {
+            value: 'unwind',
+            label: 'Unwind',
+            description: 'Let the day fall away',
+          },
+          {
+            value: 'sleep',
+            label: 'Sleep',
+            description: 'A softer end to the day',
+          },
+        ]}
+      />
+    );
   if (id === 'select')
     return (
       <GlassSelect
@@ -353,6 +389,32 @@ function Sample({ id }: { id: string }) {
       </div>
     );
   if (id === 'dialog') return <DialogSample />;
+  if (id === 'accordion')
+    return (
+      <GlassAccordion
+        label="Listening questions"
+        defaultValue={['offline']}
+        items={[
+          {
+            value: 'offline',
+            label: 'Can I listen offline?',
+            content: 'Download a collection before heading somewhere quiet.',
+          },
+          {
+            value: 'ritual',
+            label: 'How do I build a ritual?',
+            content:
+              'Choose a familiar moment, a favorite scene, and a little time for yourself.',
+          },
+          {
+            value: 'sound',
+            label: 'Can I shape the sound?',
+            content:
+              'Adjust volume, atmosphere, and stereo width in the listening room.',
+          },
+        ]}
+      />
+    );
   return (
     <div className="center-sample">
       <div className="inline-controls">
@@ -440,7 +502,7 @@ export function ComponentExplorer() {
                 >
                   {category}
                   {category === 'All components' && (
-                    <span className="count">11</span>
+                    <span className="count">{componentGuides.length}</span>
                   )}
                 </GlassButton>
               ))}

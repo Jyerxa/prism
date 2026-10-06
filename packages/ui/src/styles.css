@@ -2,6 +2,8 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import './components/prism/prism.css';
+@import './components/prism/form-components.css';
+@import './components/prism/accordion.css';
 
 @source './components';
 

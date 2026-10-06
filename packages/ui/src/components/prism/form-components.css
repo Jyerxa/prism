@@ -1,0 +1,87 @@
+.prism-textarea {
+  min-height: 112px;
+  font-size: 1rem;
+  padding: 12px 14px;
+  resize: vertical;
+  color: var(--foreground);
+  background: var(--glass-clear);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  backdrop-filter: blur(var(--glass-blur));
+}
+.prism-textarea:focus-visible,
+.prism-radio:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.prism-textarea[aria-invalid='true'],
+.prism-radio[aria-invalid='true'] {
+  border-color: var(--destructive);
+}
+.prism-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.prism-radio-group {
+  display: grid;
+  gap: 10px;
+}
+.prism-radio-row {
+  min-height: 44px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.prism-radio-row[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.prism-radio {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-clear);
+}
+.prism-radio[data-checked] {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.prism-radio-label {
+  display: block;
+}
+.prism-radio-description {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .prism-textarea {
+    background: var(--glass-solid);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .prism-textarea {
+    background: var(--glass-solid);
+    backdrop-filter: none;
+  }
+}
+@media (forced-colors: active) {
+  .prism-textarea,
+  .prism-radio {
+    border: 1px solid ButtonText;
+  }
+  .prism-radio[data-checked] {
+    background: Highlight;
+    color: HighlightText;
+  }
+  .prism-radio[data-checked] [data-slot='radio-group-indicator'] > span {
+    background: HighlightText;
+  }
+  .prism-textarea:focus-visible,
+  .prism-radio:focus-visible {
+    outline-color: Highlight;
+  }
+}
