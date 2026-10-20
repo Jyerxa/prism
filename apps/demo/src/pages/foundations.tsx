@@ -90,16 +90,24 @@ export default function Foundations() {
         <section className="foundation-section palette-section">
           <div className="foundation-heading">
             <span className="eyebrow">02 / PALETTE</span>
-            <h2>Night, with a little light.</h2>
-            <p>A cool, quiet foundation. One warm flash of energy.</p>
+            <h2>Quiet Glass + Spectral.</h2>
+            <p>
+              Semantic tokens for Obsidian (dark) and Gallery (warm light).
+              Accent stays quiet until interaction; subject hues mark topics.
+            </p>
           </div>
           <div className="palette-grid">
             {[
-              ['Ink', '#0B1018', 'Canvas'],
-              ['Mist', '#A5B1C2', 'Secondary text'],
-              ['Frost', '#F2F5FA', 'Primary text'],
-              ['Verdigris', '#74D1C4', 'Primary action'],
-              ['Sky', '#AAD8FF', 'Information'],
+              ['Surface', 'var(--surface)', 'Canvas'],
+              ['Text', 'var(--text)', 'Primary text'],
+              ['Muted', 'var(--text-muted)', 'Secondary text'],
+              ['Accent', 'var(--accent)', 'Interaction'],
+              ['Focus', 'var(--focus)', 'Focus ring'],
+              ['Spectral', 'var(--spectral)', 'Active energy'],
+              ['Patterns', 'var(--hue-patterns)', 'Subject'],
+              ['Distributed', 'var(--hue-distributed)', 'Subject'],
+              ['AI', 'var(--hue-ai)', 'Subject'],
+              ['Certification', 'var(--hue-certification)', 'Subject'],
             ].map(([name, color, usage]) => (
               <div className="color-swatch" key={name}>
                 <div style={{ background: color }} />

@@ -3,8 +3,8 @@ html {
 }
 body {
   margin: 0;
-  background: #0b1018;
-  color: #f2f5fa;
+  background: var(--surface);
+  color: var(--text);
 }
 button,
 input {
@@ -22,7 +22,8 @@ a {
   background:
     radial-gradient(ellipse 65% 38% at 88% 8%, #2f436a24, transparent 85%),
     radial-gradient(ellipse 45% 27% at 9% 28%, #24445820, transparent 90%),
-    #0b1018;
+    var(--surface);
+  color: var(--text);
 }
 .site-header {
   height: 94px;
@@ -33,7 +34,18 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-bottom: 1px solid #d4e5fc13;
+  border-bottom: 1px solid var(--glass-border);
+  background: var(--glass-chrome);
+  backdrop-filter: blur(var(--glass-blur));
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.theme-toggle {
+  min-width: 44px;
 }
 .brand {
   display: flex;
@@ -44,7 +56,7 @@ a {
   letter-spacing: -0.055em;
 }
 .brand-period {
-  color: #74d1c4;
+  color: var(--accent);
 }
 .prism-mark {
   display: inline-block;
@@ -85,7 +97,7 @@ a {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #a5b1c2;
+  color: var(--text-muted);
   height: 100%;
   font-size: 0.875rem;
   position: relative;
@@ -95,13 +107,13 @@ a {
   display: none;
 }
 .site-header nav a[aria-current='page'] {
-  color: #f2f5fa;
+  color: var(--text);
 }
 .site-header nav a[aria-current='page']::after {
   content: '';
   position: absolute;
   height: 2px;
-  background: #74d1c4;
+  background: var(--accent);
   bottom: -1px;
   left: 0;
   right: 0;
@@ -116,10 +128,11 @@ a {
   justify-content: center;
   gap: 9px;
   padding: 11px 14px;
-  border: 1px solid #d4e5fc26;
+  border: 1px solid var(--glass-border);
   border-radius: 10px;
   font-size: 0.8125rem;
-  background: #f0f5ff04;
+  background: var(--glass-clear);
+  backdrop-filter: blur(12px);
 }
 .storybook-icon {
   font-size: 0.75rem;
@@ -136,8 +149,8 @@ a {
   left: 20px;
   z-index: 100;
   padding: 12px;
-  background: #74d1c4;
-  color: #082521;
+  background: var(--accent);
+  color: var(--accent-foreground);
 }
 .skip-link:focus {
   top: 10px;
@@ -159,13 +172,13 @@ main {
   align-items: center;
   gap: 10px;
   font-size: 0.75rem;
-  color: #acb9ca;
+  color: var(--text-muted);
   letter-spacing: 0.14em;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), monospace;
 }
 .intro-kicker .prism-badge {
   margin-left: 5px;
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   min-height: 22px;
@@ -176,8 +189,8 @@ main {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #74d1c4;
-  box-shadow: 0 0 9px #74d1c444;
+  background: var(--accent);
+  box-shadow: 0 0 9px var(--accent)44;
   flex-shrink: 0;
 }
 .explorer-intro h1 {
@@ -189,12 +202,12 @@ main {
   position: relative;
 }
 .explorer-intro h1 > span:first-child {
-  color: #afbdce;
+  color: var(--text-muted);
 }
 .heading-star {
   display: inline-block;
   font-size: 5.2rem;
-  color: #74d1c4;
+  color: var(--accent);
   font-weight: 300;
   margin-left: 30px;
   vertical-align: 9px;
@@ -217,7 +230,7 @@ main {
   margin: 0 0 14px;
 }
 .intro-aside > span {
-  color: #97a7bd;
+  color: var(--text-muted);
   font-size: 0.875rem;
   line-height: 1.7;
   display: block;
@@ -232,7 +245,7 @@ main {
   transition: color 0.2s;
 }
 .text-link:hover {
-  color: #74d1c4;
+  color: var(--accent);
 }
 .intro-aside .text-link {
   margin-top: 13px;
@@ -258,12 +271,12 @@ main {
 }
 .filter-buttons .filter-active {
   background: #d2e1f210;
-  color: #f2f5fa;
+  color: var(--text);
   border-color: #d2e1f21a;
 }
 .count {
   color: #a8b7ca;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
 }
 .toolbar-note {
@@ -390,7 +403,7 @@ main {
   margin-top: 20px;
 }
 .material-tag {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   color: #d1e1f1;
 }
@@ -405,7 +418,7 @@ main {
   padding: 13px 0;
 }
 .eyebrow {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.75rem;
@@ -609,7 +622,7 @@ main {
 }
 .usage-rules p svg {
   flex-shrink: 0;
-  color: #74d1c4;
+  color: var(--accent);
   margin-top: 4px;
 }
 .avoid-note {
@@ -652,7 +665,7 @@ pre {
   white-space: pre;
   margin: 0;
   padding: 18px;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   line-height: 1.8;
   color: #a9e1d8;
@@ -831,4 +844,31 @@ pre {
   .specimen .prism-tab {
     font-size: 0.875rem;
   }
+}
+
+/* Light (Gallery) atmosphere — soft parchment veils instead of ink blooms */
+.light .site-shell,
+[data-theme='light'] .site-shell {
+  background:
+    radial-gradient(ellipse 65% 38% at 88% 8%, #c4b8a028, transparent 85%),
+    radial-gradient(ellipse 45% 27% at 9% 28%, #74d1c418, transparent 90%),
+    var(--surface);
+}
+.light .prism-mark span,
+[data-theme='light'] .prism-mark span {
+  border-color: #2a241840;
+  background: linear-gradient(135deg, #ffffffaa, #ffffff22);
+  box-shadow: 0 0 7px #2a24180a;
+}
+.light .text-link,
+[data-theme='light'] .text-link {
+  color: var(--accent);
+}
+.light .text-link:hover,
+[data-theme='light'] .text-link:hover {
+  color: var(--accent-hover);
+}
+.light .site-footer,
+[data-theme='light'] .site-footer {
+  border-color: var(--border);
 }

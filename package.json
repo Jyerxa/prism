@@ -18,7 +18,7 @@
     "storybook": "npm run dev --workspace @prism/storybook --",
     "build-storybook": "npm run build --workspace @prism/storybook --",
     "build:all": "npm run build --workspaces --if-present",
-    "lint": "oxlint apps packages/ui/src/components/prism packages/ui/src/components/ui/slider.tsx packages/ui/src/lib tests vitest.config.ts",
+    "lint": "oxlint apps packages/ui/src/components/prism packages/ui/src/theme packages/ui/src/components/ui/slider.tsx packages/ui/src/lib tests vitest.config.ts",
     "format": "oxfmt",
     "typecheck": "tsc --noEmit && npm run typecheck --workspaces --if-present",
     "test": "vitest run"
