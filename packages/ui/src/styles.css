@@ -25,19 +25,15 @@
     format('woff2');
 }
 
-:root {
-  --font-geist-sans: 'Geist Variable', Arial, Helvetica, sans-serif;
-  --font-geist-mono: 'Geist Mono Variable', monospace;
-}
-
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark *, [data-theme='dark'] *));
+@custom-variant light (&:is(.light *, [data-theme='light'] *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--prism-font-sans);
+  --font-mono: var(--prism-font-mono);
+  --font-heading: var(--prism-font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -55,8 +51,9 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
+  /* Tailwind accent = surface hover; brand accent is --accent / --primary */
+  --color-accent-foreground: var(--text);
+  --color-accent: var(--accent-surface);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -77,7 +74,9 @@
 }
 
 body {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--surface);
 }
 
 @layer base {

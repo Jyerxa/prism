@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowUpRight, Layers3, AudioLines, BookOpen } from 'lucide-react';
 import { GlassBadge } from '@prism/ui';
+import { ThemeToggle } from './theme-toggle';
 
 export function PrismMark() {
   return (
@@ -56,17 +57,20 @@ export function SiteShell({
             <ArrowUpRight className="nav-arrow" />
           </Link>
         </nav>
-        {storybookUrl && (
-          <a
-            className="storybook-link"
-            href={storybookUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="storybook-icon">S</span>Storybook
-            <ArrowUpRight size={14} />
-          </a>
-        )}
+        <div className="header-actions">
+          <ThemeToggle />
+          {storybookUrl && (
+            <a
+              className="storybook-link"
+              href={storybookUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="storybook-icon">S</span>Storybook
+              <ArrowUpRight size={14} />
+            </a>
+          )}
+        </div>
       </header>
       {children}
       <footer className="site-footer">

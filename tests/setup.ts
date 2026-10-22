@@ -7,6 +7,19 @@ globalThis.ResizeObserver = class ResizeObserver {
   unobserve() {}
   disconnect() {}
 };
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+});
 // jsdom does not calculate layout. Supply a nonzero box so Base UI can
 // measure slider edges; assertions below still exercise its real inputs.
 vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(
