@@ -6,6 +6,7 @@ import {
   semanticTokenNames,
   spectralStops,
   subjectHues,
+  subjectHuesLight,
   themeContrastPairs,
   typographyTokens,
 } from '../packages/ui/src/theme/tokens';
@@ -50,6 +51,16 @@ describe('Quiet Glass + Spectral theme tokens', () => {
     expect(prismCss).toContain(`--hue-ai: ${subjectHues.ai}`);
     expect(prismCss).toContain(
       `--hue-certification: ${subjectHues.certification}`,
+    );
+    expect(prismCss).toContain('--subject-patterns:');
+    expect(prismCss).toContain(
+      `--subject-patterns-fg: ${subjectHuesLight.patterns}`,
+    );
+    expect(prismCss).toContain(
+      `--subject-ai-fg: ${subjectHuesLight.ai}`,
+    );
+    expect(prismCss).toContain(
+      `--subject-certification-fg: ${subjectHuesLight.certification}`,
     );
   });
 

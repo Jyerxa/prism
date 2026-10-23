@@ -4,6 +4,7 @@
 @import './components/prism/prism.css';
 @import './components/prism/form-components.css';
 @import './components/prism/accordion.css';
+@import './components/prism/site-shell.css';
 
 @source './components';
 
