@@ -61,6 +61,7 @@ const preview: Preview = {
           'Prism',
           [
             'Themes',
+            'Site shell',
             'Button',
             'Card',
             'Badge',
@@ -84,6 +85,7 @@ const preview: Preview = {
     (Story, context) => {
       const theme = (context.globals.theme as 'dark' | 'light') || 'dark';
       const isLight = theme === 'light';
+      const fullscreen = context.parameters.layout === 'fullscreen';
       if (context.parameters.docs) {
         context.parameters.docs.theme = isLight ? docsLight : docsDark;
       }
@@ -92,9 +94,10 @@ const preview: Preview = {
           className={theme}
           data-theme={theme}
           style={{
-            width: 'min(420px, calc(100vw - 48px))',
-            padding: 24,
-            borderRadius: 24,
+            width: fullscreen ? '100%' : 'min(420px, calc(100vw - 48px))',
+            minHeight: fullscreen ? '100vh' : undefined,
+            padding: fullscreen ? 0 : 24,
+            borderRadius: fullscreen ? 0 : 24,
             background: isLight
               ? 'radial-gradient(ellipse at 0% 0%, #c4b8a033, transparent), #f4efe6'
               : 'radial-gradient(ellipse at 0% 0%, #56749442, transparent), #132031',

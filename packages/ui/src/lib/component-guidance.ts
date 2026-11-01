@@ -7,7 +7,7 @@ export type ComponentGuide = {
   avoid: string;
   code: string;
 };
-export const componentGuides: ComponentGuide[] = [
+export const glassComponentGuides: ComponentGuide[] = [
   {
     id: 'button',
     name: 'Button',
@@ -197,8 +197,123 @@ export const componentGuides: ComponentGuide[] = [
     code: '<GlassTooltip content="Add to your favorites">\n  <GlassButton aria-label="Save track" className="icon-button">\n    <Heart />\n  </GlassButton>\n</GlassTooltip>',
   },
 ];
+
+/** Quiet Glass editorial shell — separate from the Glass control catalog. */
+export const shellComponentGuides: ComponentGuide[] = [
+  {
+    id: 'site-header',
+    name: 'Site header',
+    category: 'Navigation',
+    summary: 'Quiet Glass chrome with a spectral current-page underline.',
+    rules: [
+      'Keep glass on the header only; reading surfaces stay solid.',
+      'Mark the current route with aria-current="page" for the spectral underline.',
+      'Pass a router Link via linkComponent when the host is not plain anchors.',
+    ],
+    avoid: 'Frosted article bodies or competing primary actions in the chrome.',
+    code: '<SiteHeader brand={{ href: "/", label: "jy." }}\n  navItems={[{ href: "/gof", label: "Patterns", current: true }]}\n  theme={theme} onThemeChange={setTheme} />',
+  },
+  {
+    id: 'site-footer',
+    name: 'Site footer',
+    category: 'Navigation',
+    summary: 'A solid closing band for editorial shells.',
+    rules: [
+      'Keep the footer solid — no glass blur on the page bottom.',
+      'Use short secondary links; landmark the nav when links are present.',
+      'Pair brand and meta without stacking promotional cards.',
+    ],
+    avoid: 'Glass chrome or dense marketing blocks in the footer.',
+    code: '<SiteFooter brand="Made of light."\n  links={[{ href: "/about", label: "About" }]} />',
+  },
+  {
+    id: 'breadcrumbs',
+    name: 'Breadcrumbs',
+    category: 'Navigation',
+    summary: 'Subject → series → article, spoken as a landmark.',
+    rules: [
+      'Omit href on the current crumb and set aria-current="page".',
+      'Keep labels short; prefer subject and series names over full titles.',
+      'Expose a nav landmark with an accessible name.',
+    ],
+    avoid: 'Duplicating the full article title when the H1 already says it.',
+    code: '<Breadcrumbs items={[\n  { label: "Home", href: "/" },\n  { label: "Distributed", href: "/distributed" },\n  { label: "Saga" },\n]} />',
+  },
+  {
+    id: 'section-nav',
+    name: 'Section nav',
+    category: 'Navigation',
+    summary: 'Ordered series sidebar with a clear current article.',
+    rules: [
+      'Use for ordered series only; leave unordered catalogs as lists of cards.',
+      'Set aria-current="page" on the reading article.',
+      'Pass subject so the current row can pick up the subject accent.',
+    ],
+    avoid: 'Using section nav for site-wide primary navigation.',
+    code: '<SectionNav label="In this series" subject="distributed"\n  items={[{ href: "/saga", title: "Saga", current: true }]} />',
+  },
+  {
+    id: 'article-card',
+    name: 'Article card',
+    category: 'Surfaces',
+    summary: 'A solid index card with a subject hue accent.',
+    rules: [
+      'Keep the surface solid; subject hue is a leading accent only.',
+      'Always show a SubjectTag text label with the hue.',
+      'Put reading time in muted mono; never opacity-dim body text.',
+    ],
+    avoid: 'Frosted glass cards for long-form indexes.',
+    code: '<ArticleCard href="/saga" subject="distributed"\n  title="Saga" description="Compensating transactions."\n  readingTime="12 min" />',
+  },
+  {
+    id: 'subject-tag',
+    name: 'Subject tag',
+    category: 'Feedback',
+    summary: 'Subject hue with a readable text label.',
+    rules: [
+      'Pair every hue with a text label — never color alone.',
+      'Use the four subjects: patterns, distributed, ai, certification.',
+      'Rely on theme tokens so light tags stay AA on parchment.',
+    ],
+    avoid: 'Using bright spectral hex as body text on the light theme.',
+    code: '<SubjectTag subject="ai" />\n<SubjectTag subject="patterns">GoF</SubjectTag>',
+  },
+  {
+    id: 'prev-next',
+    name: 'Prev / next',
+    category: 'Navigation',
+    summary: 'A quiet pager for ordered articles.',
+    rules: [
+      'Only render when the section is ordered.',
+      'Name each control with direction plus article title.',
+      'Keep the surface solid with a spectral-adjacent hover border.',
+    ],
+    avoid: 'Showing a pager on unordered essay collections.',
+    code: '<PrevNext\n  previous={{ href: "/bulkhead", title: "Bulkhead" }}\n  next={{ href: "/saga", title: "Saga" }} />',
+  },
+  {
+    id: 'skip-link',
+    name: 'Skip link',
+    category: 'Navigation',
+    summary: 'Keyboard path past chrome to main content.',
+    rules: [
+      'Place as the first focusable element in the shell.',
+      'Target the main landmark id (default #main).',
+      'Keep it visually hidden until focused.',
+    ],
+    avoid: 'Skipping essential theme or language controls that belong before main.',
+    code: '<SkipLink />\n<main id="main" tabIndex={-1}>…</main>',
+  },
+];
+
+/** Demo explorer catalog — Glass controls only. */
+export const componentGuides = glassComponentGuides;
+
 export function guideFor(id: string) {
-  return componentGuides.find((guide) => guide.id === id)!;
+  return (
+    glassComponentGuides.find((guide) => guide.id === id) ??
+    shellComponentGuides.find((guide) => guide.id === id)!
+  );
 }
 export function storyDescription(id: string) {
   const g = guideFor(id);

@@ -53,11 +53,15 @@
     var(--spectral-to)
   );
 
-  /* Per-subject hue tokens */
+  /* Per-subject hue tokens (spectral energy / accent bars) */
   --hue-patterns: #74d1c4;
   --hue-distributed: #7eb8e8;
   --hue-ai: #c4a5e8;
   --hue-certification: #c4a15a;
+  --subject-patterns: var(--hue-patterns);
+  --subject-distributed: var(--hue-distributed);
+  --subject-ai: var(--hue-ai);
+  --subject-certification: var(--hue-certification);
 
   --radius: 1rem;
   --glass-blur: 24px;
@@ -146,6 +150,20 @@
   --popup-highlight: #d8eaff18;
   --overlay: #03070f99;
   --dialog-description: #aebcce;
+
+  /* Subject tags — AA label colors on dark surfaces */
+  --subject-patterns-fg: #74d1c4;
+  --subject-patterns-bg: #49b9aa20;
+  --subject-patterns-border: #49b9aa2b;
+  --subject-distributed-fg: #7eb8e8;
+  --subject-distributed-bg: #71aeed1a;
+  --subject-distributed-border: #71aeed2b;
+  --subject-ai-fg: #c4a5e8;
+  --subject-ai-bg: #a884d41a;
+  --subject-ai-border: #a884d42b;
+  --subject-certification-fg: #c4a15a;
+  --subject-certification-bg: #c4a15a1f;
+  --subject-certification-border: #c4a15a33;
 
   /* shadcn / Tailwind bridge */
   --background: var(--surface);
@@ -266,6 +284,20 @@
   --overlay: #2a241866;
   --dialog-description: #556070;
 
+  /* Subject tags — AA label colors on parchment */
+  --subject-patterns-fg: #1f6b5f;
+  --subject-patterns-bg: #1f6b5f14;
+  --subject-patterns-border: #1f6b5f28;
+  --subject-distributed-fg: #2a6f9e;
+  --subject-distributed-bg: #2a6f9e14;
+  --subject-distributed-border: #2a6f9e28;
+  --subject-ai-fg: #6b4a8a;
+  --subject-ai-bg: #6b4a8a14;
+  --subject-ai-border: #6b4a8a28;
+  --subject-certification-fg: #6b5420;
+  --subject-certification-bg: #6b542014;
+  --subject-certification-border: #6b542028;
+
   --background: var(--surface);
   --foreground: var(--text);
   --card: var(--surface-raised);
@@ -384,6 +416,19 @@
     --popup-highlight: rgb(31 107 95 / 10%);
     --overlay: #2a241866;
     --dialog-description: #556070;
+
+    --subject-patterns-fg: #1f6b5f;
+    --subject-patterns-bg: #1f6b5f14;
+    --subject-patterns-border: #1f6b5f28;
+    --subject-distributed-fg: #2a6f9e;
+    --subject-distributed-bg: #2a6f9e14;
+    --subject-distributed-border: #2a6f9e28;
+    --subject-ai-fg: #6b4a8a;
+    --subject-ai-bg: #6b4a8a14;
+    --subject-ai-border: #6b4a8a28;
+    --subject-certification-fg: #6b5420;
+    --subject-certification-bg: #6b542014;
+    --subject-certification-border: #6b542028;
 
     --background: var(--surface);
     --foreground: var(--text);

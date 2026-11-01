@@ -19,12 +19,40 @@ export const spectralStops = {
   to: '#b8a4ff',
 } as const;
 
+export const subjectIds = [
+  'patterns',
+  'distributed',
+  'ai',
+  'certification',
+] as const;
+
+export type SubjectId = (typeof subjectIds)[number];
+
+/** Spectral subject energy — decorative accents and dark-theme labels. */
 export const subjectHues = {
   patterns: '#74d1c4',
   distributed: '#7eb8e8',
   ai: '#c4a5e8',
   certification: '#c4a15a',
 } as const;
+
+/**
+ * AA-safe subject label colors on light parchment (#f4efe6).
+ * Bright spectral hues stay for bars/accents; body tags use these.
+ */
+export const subjectHuesLight = {
+  patterns: '#1f6b5f',
+  distributed: '#2a6f9e',
+  ai: '#6b4a8a',
+  certification: '#6b5420',
+} as const;
+
+export const subjectLabels: Record<SubjectId, string> = {
+  patterns: 'Patterns',
+  distributed: 'Distributed',
+  ai: 'AI',
+  certification: 'Certification',
+};
 
 export const typographyTokens = {
   measure: '65ch',
@@ -140,6 +168,30 @@ export const themeContrastPairs: Record<PrismThemeName, ThemeContrastPair[]> = {
     {
       name: 'badge-blue on surface',
       foreground: '#2a6f9e',
+      background: '#f4efe6',
+      minRatio: 4.5,
+    },
+    {
+      name: 'subject-patterns on surface',
+      foreground: subjectHuesLight.patterns,
+      background: '#f4efe6',
+      minRatio: 4.5,
+    },
+    {
+      name: 'subject-distributed on surface',
+      foreground: subjectHuesLight.distributed,
+      background: '#f4efe6',
+      minRatio: 4.5,
+    },
+    {
+      name: 'subject-ai on surface',
+      foreground: subjectHuesLight.ai,
+      background: '#f4efe6',
+      minRatio: 4.5,
+    },
+    {
+      name: 'subject-certification on surface',
+      foreground: subjectHuesLight.certification,
       background: '#f4efe6',
       minRatio: 4.5,
     },
